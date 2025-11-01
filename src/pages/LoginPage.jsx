@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { AuthCard } from '../components/Auth/AuthCard.jsx';
 import { Input } from '../components/Auth/Input.jsx';
 import { Button } from '../components/Common/Button.jsx';
+const APIURL = "https://bloodbank-backend-six.vercel.app"
+// const APIURL = "https://localhost:5000"
 
 export const LoginPage = ({ setPage, setLoggedInUser }) => {
     const [loading, setLoading] = useState(false);

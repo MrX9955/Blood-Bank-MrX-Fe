@@ -12,6 +12,8 @@ import { ForgotPasswordPage } from './pages/ForgotPasswordPage.jsx';
 import { HomePage } from './pages/HomePage.jsx';
 import { AdminPage } from './pages/AdminPage.jsx';
 const APIURL = "https://bloodbank-backend-six.vercel.app"
+// const APIURL = "https://localhost:5000"
+
 function App() {
     const [page, setPage] = useState('login');
     const [loggedInUser, setLoggedInUser] = useState(null);
