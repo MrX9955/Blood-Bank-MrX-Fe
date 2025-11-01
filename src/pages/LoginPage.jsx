@@ -1,10 +1,15 @@
+
+
+
 // src/pages/LoginPage.jsx
 import React, { useState } from 'react';
 import { AuthCard } from '../components/Auth/AuthCard.jsx';
 import { Input } from '../components/Auth/Input.jsx';
 import { Button } from '../components/Common/Button.jsx';
-const APIURL = "https://bloodbank-backend-six.vercel.app"
-// const APIURL = "https://localhost:5000"
+
+const APIURL = "https://bloodbank-backend-six.vercel.app/"
+// const APIURL = "http://localhost:5000"
+
 
 export const LoginPage = ({ setPage, setLoggedInUser }) => {
     const [loading, setLoading] = useState(false);
@@ -20,7 +25,7 @@ export const LoginPage = ({ setPage, setLoggedInUser }) => {
         const role = email === 'admin@gmail.com' ? 'admin' : 'user';
 
         try {
-            const res = await fetch(`${APIURL}/api/login`, {
+            const res = await fetch(`${APIURL}api/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password, role }),
@@ -38,7 +43,7 @@ export const LoginPage = ({ setPage, setLoggedInUser }) => {
             localStorage.setItem('token', data.token);
 
             // Fetch user profile
-            const profileRes = await fetch(`${APIURL}/api/profile`, {
+            const profileRes = await fetch(`${APIURL}api/profile`, {
                 headers: { Authorization: `Bearer ${data.token}` },
             });
             const user = await profileRes.json();

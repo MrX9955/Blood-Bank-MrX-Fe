@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { AuthCard } from '../components/Auth/AuthCard.jsx';
 import { Input } from '../components/Auth/Input.jsx';
 import { Button } from '../components/Common/Button.jsx';
-const APIURL = "https://bloodbank-backend-six.vercel.app"
-// const APIURL = "https://localhost:5000"
+const APIURL = "https://bloodbank-backend-six.vercel.app/"
+// const APIURL = "http://localhost:5000"
 
 export const SignupPage = ({ setPage }) => {
     const [loading, setLoading] = useState(false);
@@ -29,7 +29,7 @@ export const SignupPage = ({ setPage }) => {
         }
 
         try {
-            const res = await fetch(`${APIURL}/api/register`, {
+            const res = await fetch(`${APIURL}api/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, password, role: 'user' }),
